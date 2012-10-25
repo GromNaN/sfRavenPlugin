@@ -1,0 +1,17 @@
+{
+    "name": "lexpress/sf-raven-plugin",
+    "description": "Symfony plugin for Raven PHP client for Sentry",
+    "keywords": ["symfony1", "raven", "sentry"],
+    "type": "symfony1-plugin",
+    "licence": "MIT",
+    "authors": [
+        {
+            "name": "Jerome Macias",
+            "email": "jmacias@groupe-exp.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "composer/installers": "*"
+    }
+}
