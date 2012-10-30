@@ -12,7 +12,7 @@ class sfRavenClient extends Raven_Client
     $context = sfContext::getInstance();
     $user = $context->getUser();
 
-    if (!$user)
+    if (!$user || null === $user->getGuardUser())
     {
       return parent::get_user_data();
     }
@@ -45,7 +45,7 @@ class sfRavenClient extends Raven_Client
       $extra['sf_environment'] = $conf->getEnvironment();
     }
 
-    if ($user = $context->getUser())
+    if (($user = $context->getUser()) && null !== $user->getGuardUser())
     {
       $credentials = '';
       if ($user->isAnonymous())
