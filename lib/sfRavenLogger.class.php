@@ -5,7 +5,10 @@
  */
 class sfRavenLogger extends sfLogger
 {
-  protected $level = self::ERROR;
+  /**
+   * @var sfRavenclient
+   */
+  private $client;
 
   /**
    * Logs a message.
