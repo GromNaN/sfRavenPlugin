@@ -41,16 +41,16 @@ class sfRavenLogger extends sfLogger
       case self::EMERG:
       case self::ALERT:
       case self::CRIT:
-        return 'fatal';
+        return Raven_Client::FATAL;
       case self::ERR:
-        return 'error';
+        return Raven_Client::ERROR;
       case self::WARNING:
-        return 'warning';
+        return Raven_Client::WARNING;
       case self::NOTICE:
       case self::INFO:
-        return 'info';
+        return Raven_Client::INFO;
       case self::DEBUG:
-        return 'debug';
+        return Raven_Client::DEBUG;
     }
 
     throw new Exception(sprintf('Unknown priority "%s" in Raven.', $priority));
