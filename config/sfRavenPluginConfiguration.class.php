@@ -27,10 +27,6 @@ class sfRavenPluginConfiguration extends sfPluginConfiguration
 
       $client = new sfRavenClient(sfConfig::get('raven_dsn'));
 
-      $this->dispatcher->connect('application.throw_exception', function (sfEvent $event) use ($client) {
-        $client->captureException($event->getSubject());
-      });
-
       $errorHandler = new Raven_ErrorHandler($client);
       $errorHandler->registerExceptionHandler();
       $errorHandler->registerErrorHandler(true, E_ERROR | E_PARSE | E_NOTICE | E_STRICT);
