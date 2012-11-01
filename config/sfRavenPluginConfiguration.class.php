@@ -30,7 +30,7 @@ class sfRavenPluginConfiguration extends sfPluginConfiguration
       $errorHandler = new Raven_ErrorHandler($client);
       $errorHandler->registerExceptionHandler();
       $errorHandler->registerErrorHandler(true, E_ERROR | E_PARSE | E_NOTICE | E_STRICT);
-      $errorHandler->registerShutdownFunction();
+      $errorHandler->registerShutdownFunction(500);
     }
   }
 }
